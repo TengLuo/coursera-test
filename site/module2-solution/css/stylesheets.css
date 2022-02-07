@@ -1,0 +1,117 @@
+	/********** Base styles **********/
+	* {
+		box-sizing: border-box;
+		margin: 0;
+		padding: 0;
+		font-family: Arial, Helvetica, sans-serif;
+	}
+
+	#title{
+		margin: 15px;
+		text-align: center;
+		font-size: 175%;
+	}
+
+	#mobile-title  {
+		display: none;
+	}
+
+	.card {
+		position: relative;
+		background-color: #edede9;
+		border: 1px solid black;
+		margin:10px;
+		height: 250px;
+	}
+
+	.card-title, .card-m-title {
+		overflow: hidden;
+		position: relative;
+		width: 30%;
+		left: 70%;
+		max-height: 20%;
+		text-align: center;
+		padding: 3px;
+		color: white;
+		font-size: 125%;
+		border: 1px solid black;
+	}
+
+	.card-m-title {
+		width:100%;
+		left: 0;
+		display: none;
+	}
+
+	.card-content {
+		overflow: hidden;
+		position: relative;
+		padding: 15px;
+		max-height: 80%;
+		color: black;
+		text-align: left;
+
+	}
+
+	.card-content:hover {
+		overflow-y: scroll;
+	}
+
+	#chicken-title {
+		background-color: #d62828;
+	}
+
+	#beef-title {
+		background-color: #003049;
+	}
+
+	#sushi-title {
+		background-color: #fcbf49;
+		color: black;
+	}
+
+	/********** Large devices only **********/
+	@media (min-width: 992px) {
+		.col-lg-4 {
+			float: left;
+			width: 33.33%;
+		}
+	}
+
+	/********** Medium devices only **********/
+	@media (min-width: 768px) and (max-width: 991px) {
+		.col-md-6 {
+			float: left;
+			width: 50%;
+		}
+
+		.col-md-12 {
+			float: left;
+			width: 100%;
+		}
+
+	}
+
+	@media (max-width: 767px) {
+		#title  {
+			display: none;
+		}
+
+		#mobile-title  {
+			display: block;
+			margin: 15px;
+			text-align: left;
+			font-family: "Lucida Console", "Courier New", monospace;
+			font-size: 90%;
+		}
+
+		.card-title {
+			display: none;
+		}
+
+		.card-m-title {
+			width:100%;
+			left: 0;
+			display: block;
+		}
+	}
