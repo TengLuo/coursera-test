@@ -13,7 +13,6 @@
 		$scope.messageStyle = 'regular-message';
 
 		var checkMenuItem = function (lunchMenu) {
-			console.log($scope.lunchMenu);
 			if (lunchMenu === "" || $scope.lunchMenu === undefined) {
 				$scope.messageStyle = 'alert-message';
 				$scope.inputFieldStyle = 'alert-inputField';
