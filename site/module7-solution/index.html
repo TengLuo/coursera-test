@@ -29,7 +29,6 @@
   <h1>Shopping List Check Off</h1>
 
   <div class="row">
-
     <!-- To Buy List -->
     <div class="col-md-6">
      <h2>To Buy:</h2>
@@ -37,7 +36,12 @@
         <ul>
           <li ng-repeat="item in toBuy.toBuyItems">
               <div>Buy 
-                <input type="text" ng-model="item.quantity" placeholder="quantity"> {{ item.name }}
+                <input type="text" 
+                  ng-model="item.quantity"
+                  ng-style="{'width':'30px'}"
+                  placeholder="quantity">
+                {{ item.name }} with per item price 
+                {{ item.pricePerItem | number:2 | currency}}
                 <button ng-click ="toBuy.removeToBuyItems($index)" class="btn btn-default"><span class="glyphicon glyphicon-ok"></span> Bought</button>
               </div>
           </li>
