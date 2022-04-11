@@ -1,0 +1,11 @@
+<div>
+	<table class="table">
+		<tr ng-repeat="item in list">
+			<td>{{item.id}}</td>
+			<td>{{item.name}}</td>
+			<td>{{item.description}}</td>
+			<td><button ng-click="onRemove({index: $index});" class="btn btn-primary">Don't want this one!</button></td>
+		</tr>
+	</table>
+</div>
+<div class="error" ng-transclude></div>	
