@@ -1,0 +1,75 @@
+<div class="container">
+    <h2>Sign Up Today!</h2>
+	<form name='signupForm' novalidate>
+		<input type="text" 
+			name="firstname"
+			placeholder="First Name" 
+			ng-model="signUpCtrl.info.firstname"
+			required>
+		<br>
+		<span
+           ng-if="signupForm.firstname.$error.required && signupForm.firstname.$touched">
+           Please input your first name
+        </span>
+        <br>
+
+        <input type="text" 
+			name="lastname"
+			placeholder="Last Name" 
+			ng-model="signUpCtrl.info.lastname"
+			required>
+		<br>
+		<span
+           ng-if="signupForm.lastname.$error.required && signupForm.lastname.$touched">
+           Please input your last name
+        </span>
+        <br>
+
+        <input type="email"
+        	name="email"
+        	placeholder="Email"
+        	ng-model="signUpCtrl.info.email"
+          	required>
+         <br>
+         <span ng-if="signupForm.email.$invalid && signupForm.email.$touched">
+            Must be a valid email address: handle@domain format
+          </span>
+          <br>
+
+        <input type="text"
+        	name="phone"
+        	placeholder="Phone ###-###-####"
+          	ng-model="signUpCtrl.info.phone"
+          	pattern="(\d{3})-(\d{3})-(\d{4})">
+          <br>
+          <span ng-if="signupForm.phone.$invalid && signupForm.phone.$touched">
+            Phone must be in the format ###-###-####.
+          </span>
+          <br>
+
+        <input type="text"
+        	name="favDish"
+        	placeholder="Favorite dish"
+          	ng-model="signUpCtrl.info.favDish"
+          	required
+          	check-item="signUpCtrl.info.favDishItem"
+          >
+          <br>
+          <span ng-if="signupForm.favDish.$invalid && signupForm.favDish.$touched">
+            Please input favorite dish short name.
+          </span>
+          <br>
+          <span ng-if="signupForm.favDish.$error.checkItem">
+            No such menu number exists
+          </span>
+          <br>
+
+		<button 
+			ng-disabled="signupForm.$invalid"
+		    ng-click="signUpCtrl.submit()">Submit</button>    
+	</form>
+
+	<div id="info" ng-if="signUpCtrl.completed">
+      Your information has been saved.
+    </div>
+</div>
